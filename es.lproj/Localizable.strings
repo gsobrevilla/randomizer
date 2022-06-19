@@ -6,5 +6,6 @@
   
 */
 
-"new_letter_button_text" = "Siguiente letra";
+"new_letter_button" = "Siguiente letra";
 "previous_values_title" = "Valores anteriores:";
+"previous_values_see_history_button" = "Ver todos…";

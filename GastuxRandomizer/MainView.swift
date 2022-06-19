@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     
     @StateObject var randomizer = Randomizer()
+    @State var presentingHistoryModel = false
     
     var joinedValues: String {
         randomizer.values.isEmpty ? "-" : randomizer.values.joined(separator: " ")
@@ -51,12 +52,18 @@ struct MainView: View {
                 
                 // Next values button
                 Button(
-                    LocalizedStringKey("new_letter_button_text"))
+                    LocalizedStringKey("new_letter_button"))
                 {
                     withAnimation {
                         randomizer.generateNewValue()
                     }
                 }
+                .font(
+                    .system(
+                        size: 17,
+                        weight: .medium,
+                        design: .rounded)
+                )
                 .foregroundColor(.white)
                 .padding()
                 .background(
@@ -66,14 +73,32 @@ struct MainView: View {
                 Spacer()
                 
                 VStack(alignment: .leading, spacing: 8) {
-                    // Previous values title
-                    Text(LocalizedStringKey("previous_values_title"))
-                        .foregroundColor(.hex("#57606f"))
+                    
+                    HStack {
+                        // Previous values title
+                        Text(LocalizedStringKey("previous_values_title"))
+                            .foregroundColor(.hex("#57606f"))
+                            .font(
+                                .system(
+                                    size: 15,
+                                    weight: .light,
+                                    design: .rounded))
+                        
+                        Spacer()
+                        
+                        // See all history button
+                        Button(LocalizedStringKey("previous_values_see_history_button")) {
+                            presentingHistoryModel = true
+                        }
+                        .foregroundColor(Color.hex("#1e90ff"))
                         .font(
                             .system(
-                                size: 17,
-                                weight: .light,
+                                size: 15,
+                                weight: .regular,
                                 design: .rounded))
+                    }
+                    
+                    
                     // Previous values
                     Text(joinedValues)
                         .transition(.opacity)
@@ -91,8 +116,9 @@ struct MainView: View {
                     alignment: .topLeading)
                 .padding(8)
             }
+        }.sheet(isPresented: $presentingHistoryModel) {
+            HistoryView(values: randomizer.values)
         }
-            
     }
 }
 
