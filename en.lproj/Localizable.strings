@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  GastuxRandomizer
+
+  Created by Gastón on 18/06/2022.
+  
+*/
+
+"new_letter_button_text" = "Next letter";
+"previous_values_title" = "Previous values:";
