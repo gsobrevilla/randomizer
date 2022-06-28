@@ -19,7 +19,7 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
-            Color.hex("#f1f2f6").ignoresSafeArea()
+            Color.appBackground.ignoresSafeArea()
             VStack {
                 HStack {
                     Spacer()
@@ -44,7 +44,7 @@ struct MainView: View {
                     )
                     .fontWeight(.medium)
                     .transition(.opacity)
-                    .foregroundColor(.hex("#2f3542"))
+                    .foregroundColor(.primaryText)
                     .id(UUID().uuidString)
                 
                 Spacer()
@@ -64,11 +64,11 @@ struct MainView: View {
                         weight: .medium,
                         design: .rounded)
                 )
-                .foregroundColor(.white)
+                .foregroundColor(.primaryActionForeground)
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 8)
-                        .fill(Color.hex("#1e90ff")))
+                        .fill(Color.primaryActionBackground))
                 
                 Spacer()
                 
@@ -77,7 +77,7 @@ struct MainView: View {
                     HStack {
                         // Previous values title
                         Text(LocalizedStringKey("previous_values_title"))
-                            .foregroundColor(.hex("#57606f"))
+                            .foregroundColor(.secondaryText)
                             .font(
                                 .system(
                                     size: 15,
@@ -90,7 +90,7 @@ struct MainView: View {
                         Button(LocalizedStringKey("previous_values_see_history_button")) {
                             presentingHistoryModel = true
                         }
-                        .foregroundColor(Color.hex("#1e90ff"))
+                        .foregroundColor(Color.secondaryActionForeground)
                         .font(
                             .system(
                                 size: 15,
@@ -102,7 +102,7 @@ struct MainView: View {
                     // Previous values
                     Text(joinedValues)
                         .transition(.opacity)
-                        .foregroundColor(.hex("#2f3542"))
+                        .foregroundColor(.primaryText)
                         .font(
                             .system(
                                 size: 20,

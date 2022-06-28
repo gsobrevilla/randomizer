@@ -26,11 +26,11 @@ struct HistoryView: View {
     
     var body: some View {
         ZStack {
-            Color.hex("#f1f2f6").ignoresSafeArea()
+            Color.appBackground.ignoresSafeArea()
             
             VStack() {
                 Capsule()
-                    .fill(Color.secondary)
+                    .fill(Color.secondaryText)
                     .frame(width: 30, height: 3)
                     .padding(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
                 
@@ -45,10 +45,10 @@ struct HistoryView: View {
                                         .padding(24)
                                         .background(
                                             Rectangle()
-                                                .fill(Color.white)
+                                                .fill(Color.cardBackground)
                                                 .cornerRadius(8)
                                         )
-                                        .foregroundColor(.hex("#2f3542"))
+                                        .foregroundColor(.primaryText)
                                         .font(.system(size: 24))
                                     Spacer().frame(minWidth: 0, maxWidth: .infinity)
                                 }
