@@ -11,11 +11,16 @@ struct MainView: View {
     
     @StateObject var randomizer = Randomizer()
     @State var presentingHistoryModel = false
+    @State var presentingResetConfirmation = false
     
     var joinedValues: String {
         randomizer.values.isEmpty ? "-" : randomizer.values.joined(separator: " ")
     }
     var currentValue: String { randomizer.values.last ?? "-" }
+    
+    var showResetButton: Bool {
+        !randomizer.values.isEmpty
+    }
     
     var body: some View {
         ZStack {
@@ -72,6 +77,22 @@ struct MainView: View {
                 
                 Spacer()
                 
+               
+                Button(LocalizedStringKey("reset_values_button")) {
+                    presentingResetConfirmation = true
+                }
+                .font(
+                .system(
+                    size: 17,
+                    weight: .medium,
+                    design: .rounded)
+                )
+                .foregroundColor(.secondaryActionDestructiveForeground)
+                .opacity(showResetButton ? 1 : 0)
+                
+                
+                Spacer().frame(height: 16)
+                
                 VStack(alignment: .leading, spacing: 8) {
                     
                     HStack {
@@ -87,15 +108,18 @@ struct MainView: View {
                         Spacer()
                         
                         // See all history button
-                        Button(LocalizedStringKey("previous_values_see_history_button")) {
-                            presentingHistoryModel = true
+                        
+                        if !randomizer.values.isEmpty {
+                            Button(LocalizedStringKey("previous_values_see_history_button")) {
+                                presentingHistoryModel = true
+                            }
+                            .foregroundColor(Color.secondaryActionForeground)
+                            .font(
+                                .system(
+                                    size: 15,
+                                    weight: .regular,
+                                    design: .rounded))
                         }
-                        .foregroundColor(Color.secondaryActionForeground)
-                        .font(
-                            .system(
-                                size: 15,
-                                weight: .regular,
-                                design: .rounded))
                     }
                     
                     
@@ -118,6 +142,15 @@ struct MainView: View {
             }
         }.sheet(isPresented: $presentingHistoryModel) {
             HistoryView(values: randomizer.values)
+        }.alert(isPresented: $presentingResetConfirmation) {
+            Alert(
+                title: Text(LocalizedStringKey("reset_values_confirmation_title")),
+                message: nil,
+                primaryButton: .destructive(Text(LocalizedStringKey("reset_values_confirmation_confirm_action"))) {
+                    randomizer.reset()
+                },
+                secondaryButton: .cancel(Text(LocalizedStringKey("reset_values_confirmation_cancel_action")))
+            )
         }
     }
 }

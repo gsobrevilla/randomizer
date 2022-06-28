@@ -16,4 +16,8 @@ class Randomizer: ObservableObject {
     func generateNewValue() {
         values.append(valuesSet.randomElement()!)
     }
+    
+    func reset() {
+        values.removeAll()
+    }
 }

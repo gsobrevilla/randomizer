@@ -9,3 +9,8 @@
 "new_letter_button" = "Next letter";
 "previous_values_title" = "Previous values:";
 "previous_values_see_history_button" = "See all…";
+
+"reset_values_button" = "Clear";
+"reset_values_confirmation_title" = "Are you sure?";
+"reset_values_confirmation_confirm_action" = "Yes";
+"reset_values_confirmation_cancel_action" = "No";

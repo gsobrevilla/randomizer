@@ -19,6 +19,8 @@ extension Color {
     static let primaryActionBackground = Color("primaryActionBackground")
     static let primaryActionForeground = Color("primaryActionForeground")
     static let secondaryActionForeground = Color("secondaryActionForeground")
+    static let secondaryActionDestructiveForeground = Color("secondaryActionDestructiveForeground")
+    
     
     
     
