@@ -11,11 +11,18 @@ struct HistoryView: View {
     
     let values: [String]
     
+    let orderedValues: [String]
+    
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
+    
+    init(values: [String]) {
+        self.values = values
+        self.orderedValues = values.reversed()
+    }
     
     var body: some View {
         ZStack {
@@ -27,29 +34,32 @@ struct HistoryView: View {
                     .frame(width: 30, height: 3)
                     .padding(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
                 
-                HStack {
-                    Text("Valores anteriores")
-                        .font(.title2)
-                    Spacer()
-                }.padding(16)
-                
-
                 ScrollViewReader { proxy in
                     ScrollView {
-                        LazyVGrid(columns: columns, spacing: 16) {
-                            ForEach(values.indices, id: \.self) { index in
-                                Text(values[index])
+                        LazyVStack(spacing: 16) {
+                            ForEach(orderedValues.indices, id: \.self) { index in
+                                HStack {
+                                    Spacer().frame(minWidth: 0, maxWidth: .infinity)
+                                    Text(orderedValues[index])
+                                        .frame(minWidth: 0, maxWidth: .infinity)
+                                        .padding(24)
+                                        .background(
+                                            Rectangle()
+                                                .fill(Color.white)
+                                                .cornerRadius(8)
+                                        )
+                                        .foregroundColor(.hex("#2f3542"))
+                                        .font(.system(size: 24))
+                                    Spacer().frame(minWidth: 0, maxWidth: .infinity)
+                                }
                             }
                         }
                     }
-                    .onAppear {
-                        proxy.scrollTo(values.count - 1)
-                    }
+                    .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
                 }
                 
                 Spacer()
                     .frame(height: 16)
-                
             }
         }
     }
@@ -57,6 +67,6 @@ struct HistoryView: View {
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView(values: (1...100).map { "Value \($0)" })
+        HistoryView(values: ["A","B","C","D","E","F","A","B","C","D","E","F","A","B","C","D","E","F","A","B","C","D","E","F"])
     }
 }
