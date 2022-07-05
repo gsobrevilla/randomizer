@@ -10,7 +10,8 @@ import SwiftUI
 struct MainView: View {
     
     @StateObject var randomizer = Randomizer()
-    @State var presentingHistoryModel = false
+    @State var presentingSettingsModal = false
+    @State var presentingHistoryModal = false
     @State var presentingResetConfirmation = false
     
     var joinedValues: String {
@@ -24,10 +25,14 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
-            Color.appBackground.ignoresSafeArea()
+            BackgroundView()
+            
             VStack {
                 HStack {
                     Spacer()
+                    Button("Settings") {
+                        presentingSettingsModal = true
+                    }
                 }
                 .padding(
                     EdgeInsets(
@@ -97,13 +102,26 @@ struct MainView: View {
                     
                     HStack {
                         // Previous values title
-                        Text(LocalizedStringKey("previous_values_title"))
-                            .foregroundColor(.secondaryText)
-                            .font(
-                                .system(
-                                    size: 15,
-                                    weight: .light,
-                                    design: .rounded))
+                        
+                        if randomizer.settings.allowRepetitions {
+                            Text(LocalizedStringKey("previous_values_title"))
+                                .foregroundColor(.secondaryText)
+                                .font(
+                                    .system(
+                                        size: 15,
+                                        weight: .light,
+                                        design: .rounded))
+                        } else {
+                            Text("\(randomizer.generatedValuesCount)/\(randomizer.possibleValuesCount ?? 0)")
+                                .foregroundColor(.secondaryText)
+                                .font(
+                                    .system(
+                                        size: 15,
+                                        weight: .light,
+                                        design: .rounded))
+                        }
+                        
+                        
                         
                         Spacer()
                         
@@ -111,7 +129,7 @@ struct MainView: View {
                         
                         if !randomizer.values.isEmpty {
                             Button(LocalizedStringKey("previous_values_see_history_button")) {
-                                presentingHistoryModel = true
+                                presentingHistoryModal = true
                             }
                             .foregroundColor(Color.secondaryActionForeground)
                             .font(
@@ -140,7 +158,10 @@ struct MainView: View {
                     alignment: .topLeading)
                 .padding(8)
             }
-        }.sheet(isPresented: $presentingHistoryModel) {
+        }.sheet(isPresented: $presentingSettingsModal) {
+            SettingsView()
+                .environmentObject(randomizer.settings)
+        }.sheet(isPresented: $presentingHistoryModal) {
             HistoryView(values: randomizer.values)
         }.alert(isPresented: $presentingResetConfirmation) {
             Alert(

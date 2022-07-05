@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.2.0] - Unreleased
+### Added
+- Settings Screen allows to configure the values to be generated (letters (A-Z), vowels or numbers (0-9))
+- Changing a setting will reset the values on the Mains Screen
+
 ## [0.1.0] - Unreleased
 ### Added
 - Main screen generates a random letter (English alphabet) and shows previous values.

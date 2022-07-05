@@ -26,13 +26,10 @@ struct HistoryView: View {
     
     var body: some View {
         ZStack {
-            Color.appBackground.ignoresSafeArea()
+            BackgroundView()
             
             VStack() {
-                Capsule()
-                    .fill(Color.secondaryText)
-                    .frame(width: 30, height: 3)
-                    .padding(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
+                SheetDragControlView()
                 
                 ScrollViewReader { proxy in
                     ScrollView {
