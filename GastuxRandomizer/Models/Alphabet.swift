@@ -27,7 +27,8 @@ class Alphabets {
         LanguageAlphabet(id: "letters"),
         FixedSetAlphabet(id: "vowels", values: CharacterArrays.englishVowels),
         FixedSetAlphabet(id: "numbers", values: CharacterArrays.numbers09),
-        NumericRangeAlphabet(id: "custom_numbers")
+        NumericRangeAlphabet(id: "custom_numbers"),
+        FixedSetAlphabet(id: "yes_no", values: ["yes", "no"])
     ]
     
     static func getById(_ id: String) -> any Alphabet {

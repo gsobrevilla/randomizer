@@ -4,6 +4,7 @@
 ### Added
 - Settings screen is fully functional and allows to customize custom alphabet settings.
 - Language selection for letters alphabet
+- Yes/No alphabet
 
 ### Changed
 - Improved UI in Settings.
