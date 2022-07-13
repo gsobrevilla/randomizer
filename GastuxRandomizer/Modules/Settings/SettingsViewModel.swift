@@ -14,16 +14,18 @@ class SettingsViewModel: ObservableObject {
         var allowRepetitions: Bool = true
         var numericFrom: String = ""
         var numericTo: String = ""
+        var languageId: String = ""
         
         init(settings: Settings) {
             self.alphabetId = settings.randomizerSettings.alphabetId
             self.allowRepetitions = settings.randomizerSettings.allowRepetitions
             self.numericFrom = String(settings.alphabetSettings.numericFrom)
             self.numericTo = String(settings.alphabetSettings.numericTo)
+            self.languageId = settings.alphabetSettings.language.rawValue
         }
         
         func buildAlphabetSettings() -> AlphabetSettings {
-            return AlphabetSettings(numericFrom: Int(numericFrom)!, numericTo: Int(numericTo)!)
+            return AlphabetSettings(numericFrom: Int(numericFrom)!, numericTo: Int(numericTo)!, language: .init(rawValue: languageId)!)
         }
         
         func buildRandomizerSettings() -> RandomizerSettings {
@@ -35,6 +37,8 @@ class SettingsViewModel: ObservableObject {
     
     let options: [String]
     
+    let languageOptions: [String]
+    
     var alphabet: Alphabet { Alphabets.getById(formFields.alphabetId) }
     
     @Published var formFields: FormFields {
@@ -44,6 +48,7 @@ class SettingsViewModel: ObservableObject {
     init(randomizer: Randomizer) {
         self.randomizer = randomizer
         options = Alphabets.options.map({ $0.id })
+        languageOptions = AlphabetSettings.Language.allCases.map({ $0.rawValue })
         formFields = FormFields(settings: randomizer.settings)
     }
     
@@ -62,6 +67,8 @@ class SettingsViewModel: ObservableObject {
             if let numericTo = Int(formFields.numericTo) {
                 return numericTo > Int(formFields.numericFrom) ?? 0
             } else { return false }
+        case .language:
+            return AlphabetSettings.Language(rawValue: formFields.languageId) != nil
         }
     }
     

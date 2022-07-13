@@ -22,6 +22,11 @@ struct SettingsView: View {
                         // Alphabet selector
                         SettingsPickerRow(label: "Values", value: $viewModel.formFields.alphabetId, options: viewModel.options)
                         
+                        // Language Picker
+                        if viewModel.hasSetting(.language) {
+                            SettingsPickerRow(label: "Language", value: $viewModel.formFields.languageId, options: viewModel.languageOptions)
+                        }
+                        
                         // Allow repetitions
                         Toggle("Allow repeated chars",
                                isOn: $viewModel.formFields.allowRepetitions)

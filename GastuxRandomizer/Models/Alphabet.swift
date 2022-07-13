@@ -9,6 +9,8 @@ import Foundation
 
 class CharacterArrays {
     static let englishLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    static let spanishLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    
     static let englishVowels = ["A","E","I","O","U"]
     static let numbers09 = ["0","1","2","3","4","5","6","7","8","9"]
 }
@@ -22,7 +24,7 @@ protocol Alphabet {
 class Alphabets {
     
     static let options: [any Alphabet] = [
-        FixedSetAlphabet(id: "letters", values: CharacterArrays.englishLetters),
+        LanguageAlphabet(id: "letters"),
         FixedSetAlphabet(id: "vowels", values: CharacterArrays.englishVowels),
         FixedSetAlphabet(id: "numbers", values: CharacterArrays.numbers09),
         NumericRangeAlphabet(id: "custom_numbers")
@@ -60,5 +62,22 @@ class NumericRangeAlphabet: Alphabet {
     
     func getValuesFor(settings: AlphabetSettings) -> [String] {
         return (settings.numericFrom...settings.numericTo).map({ String($0) })
+    }
+}
+
+class LanguageAlphabet: Alphabet {
+    
+    let id: String
+    var settingsRequired: [AlphabetSettings.Field] = [.language]
+    
+    init(id: String) {
+        self.id = id
+    }
+    
+    func getValuesFor(settings: AlphabetSettings) -> [String] {
+        switch settings.language {
+        case .english: return CharacterArrays.englishLetters
+        case .spanish: return CharacterArrays.spanishLetters
+        }
     }
 }

@@ -18,10 +18,17 @@ struct AlphabetSettings {
     enum Field {
         case numericFrom
         case numericTo
+        case language
+    }
+    
+    enum Language: String, CaseIterable {
+        case english = "english"
+        case spanish = "spanish"
     }
     
     var numericFrom: Int = 1
     var numericTo: Int = 6
+    var language: Language = .english
 }
 
 class Settings: ObservableObject {
