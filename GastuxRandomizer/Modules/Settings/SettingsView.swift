@@ -17,30 +17,14 @@ struct SettingsView: View {
             VStack {
                 SheetDragControlView()
                 ScrollView {
-                    VStack {
+                    VStack(spacing: 16) {
                         
                         // Alphabet selector
-                        HStack {
-                            Text("Values")
-                            Spacer()
-                            Picker("Values", selection: $viewModel.formFields.alphabetId) {
-                                ForEach(viewModel.options, id: \.self) { option in
-                                    Text(option)
-                                        .tag(option)
-                                }
-                            }
-                            .pickerStyle(.menu)
-                            .frame(height: 38)
-                            .background(
-                                Rectangle()
-                                    .fill(Color.cardBackground)
-                                    .cornerRadius(8)
-                            )
-                            .accentColor(Color.primaryText)
-                        }
+                        SettingsPickerRow(label: "Values", value: $viewModel.formFields.alphabetId, options: viewModel.options)
                         
                         // Allow repetitions
-                        Toggle("Allow repeated chars", isOn: $viewModel.formFields.allowRepetitions)
+                        Toggle("Allow repeated chars",
+                               isOn: $viewModel.formFields.allowRepetitions)
                         
                         // From
                         if(viewModel.hasSetting(.numericFrom)) {
@@ -63,6 +47,7 @@ struct SettingsView: View {
                             )
                         }
                     }
+                    .padding(24)
                 }
             }
         }.onDisappear {
@@ -71,7 +56,7 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView2_Previews: PreviewProvider {
+struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView(viewModel: SettingsViewModel(randomizer: Randomizer()))
     }

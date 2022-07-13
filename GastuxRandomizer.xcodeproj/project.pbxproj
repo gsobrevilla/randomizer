@@ -13,6 +13,7 @@
 		3D1E5D13286CF05300AA8049 /* SheetDragControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1E5D12286CF05300AA8049 /* SheetDragControlView.swift */; };
 		3D2A4637286B7EA300E14C37 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A4636286B7EA300E14C37 /* Colors.xcassets */; };
 		3D2A4639286B80AA00E14C37 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2A4638286B80AA00E14C37 /* Colors.swift */; };
+		3D46F3DA287F263D008097B3 /* SettingsPickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D46F3D9287F263D008097B3 /* SettingsPickerRow.swift */; };
 		3D7C1728285D1C1D000FF11D /* GastuxRandomizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7C1727285D1C1D000FF11D /* GastuxRandomizerApp.swift */; };
 		3D7C172A285D1C1D000FF11D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7C1729285D1C1D000FF11D /* MainView.swift */; };
 		3D7C172C285D1C1E000FF11D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C172B285D1C1E000FF11D /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		3D1E5D12286CF05300AA8049 /* SheetDragControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetDragControlView.swift; sourceTree = "<group>"; };
 		3D2A4636286B7EA300E14C37 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3D2A4638286B80AA00E14C37 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3D46F3D9287F263D008097B3 /* SettingsPickerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPickerRow.swift; sourceTree = "<group>"; };
 		3D7C1724285D1C1D000FF11D /* GastuxRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GastuxRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7C1727285D1C1D000FF11D /* GastuxRandomizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastuxRandomizerApp.swift; sourceTree = "<group>"; };
 		3D7C1729285D1C1D000FF11D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				3D8C5345287B9C4300DEDE02 /* SettingsViewModel.swift */,
 				3D09EA8D287EEFB900163B32 /* SettingsTextFieldRow.swift */,
 				3D09EA8F287F1BF500163B32 /* SettingsFactory.swift */,
+				3D46F3D9287F263D008097B3 /* SettingsPickerRow.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			files = (
 				3D1E5D13286CF05300AA8049 /* SheetDragControlView.swift in Sources */,
 				3D7C173E285E156E000FF11D /* Randomizer.swift in Sources */,
+				3D46F3DA287F263D008097B3 /* SettingsPickerRow.swift in Sources */,
 				3D8781E22874DB5600B622F3 /* SettingsView.swift in Sources */,
 				3D2A4639286B80AA00E14C37 /* Colors.swift in Sources */,
 				3D7C172A285D1C1D000FF11D /* MainView.swift in Sources */,

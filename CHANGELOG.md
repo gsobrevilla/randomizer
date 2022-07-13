@@ -4,6 +4,9 @@
 ### Added
 - Settings screen is fully functional and allows to customize custom alphabet settings.
 
+### Changed
+- Improved UI in Settings.
+
 ## [0.3.0] - Unreleased
 ### Added
 - Alphabets now receive custom settings in order to generate its values
