@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0] - Unreleased
+### Added
+- Settings screen is fully functional and allows to customize custom alphabet settings.
+
+## [0.3.0] - Unreleased
+### Added
+- Alphabets now receive custom settings in order to generate its values
+
 ## [0.2.0] - Unreleased
 ### Added
 - Settings Screen allows to configure the values to be generated (letters (A-Z), vowels or numbers (0-9))

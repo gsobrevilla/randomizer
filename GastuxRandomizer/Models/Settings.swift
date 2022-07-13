@@ -8,6 +8,22 @@
 import Foundation
 import Combine
 
+struct RandomizerSettings {
+    var alphabetId: String = Alphabets.options.last!.id
+    var allowRepetitions: Bool = true
+}
+
+struct AlphabetSettings {
+    
+    enum Field {
+        case numericFrom
+        case numericTo
+    }
+    
+    var numericFrom: Int = 1
+    var numericTo: Int = 6
+}
+
 class Settings: ObservableObject {
     
     @Published var randomizerSettings = RandomizerSettings() {
@@ -24,16 +40,11 @@ class Settings: ObservableObject {
         randomizerSettings.allowRepetitions
     }
     
-    var values: [String] {
-        Alphabets.getById(randomizerSettings.alphabetId).values
+    var currentAlphabet: Alphabet {
+        Alphabets.getById(randomizerSettings.alphabetId)
     }
-}
-
-struct AlphabetSettings {
     
-}
-
-struct RandomizerSettings {
-    var alphabetId: String = Alphabets.options.first!.id
-    var allowRepetitions: Bool = false
+    var values: [String] {
+        Alphabets.getById(randomizerSettings.alphabetId).getValuesFor(settings: alphabetSettings)
+    }
 }

@@ -159,8 +159,7 @@ struct MainView: View {
                 .padding(8)
             }
         }.sheet(isPresented: $presentingSettingsModal) {
-            SettingsView()
-                .environmentObject(randomizer.settings)
+            SettingsFactory.buildView(randomizer: randomizer)
         }.sheet(isPresented: $presentingHistoryModal) {
             HistoryView(values: randomizer.values)
         }.alert(isPresented: $presentingResetConfirmation) {

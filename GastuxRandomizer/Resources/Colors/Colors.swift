@@ -21,6 +21,8 @@ extension Color {
     static let secondaryActionForeground = Color("secondaryActionForeground")
     static let secondaryActionDestructiveForeground = Color("secondaryActionDestructiveForeground")
     
+    static let invalid = Color("invalid")
+    
     
     
     

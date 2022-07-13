@@ -7,17 +7,25 @@
 
 import Foundation
 
+class CharacterArrays {
+    static let englishLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    static let englishVowels = ["A","E","I","O","U"]
+    static let numbers09 = ["0","1","2","3","4","5","6","7","8","9"]
+}
+
 protocol Alphabet {
     var id: String { get }
-    var values: [String] { get }
+    var settingsRequired: [AlphabetSettings.Field] { get }
+    func getValuesFor(settings: AlphabetSettings) -> [String]
 }
 
 class Alphabets {
     
     static let options: [any Alphabet] = [
-        FixedSetAlphabet(id: "letters", values: ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]),
-        FixedSetAlphabet(id: "vowels", values: ["A","E","I","O","U"]),
-        FixedSetAlphabet(id: "numbers", values: ["0","1","2","3","4","5","6","7","8","9"])
+        FixedSetAlphabet(id: "letters", values: CharacterArrays.englishLetters),
+        FixedSetAlphabet(id: "vowels", values: CharacterArrays.englishVowels),
+        FixedSetAlphabet(id: "numbers", values: CharacterArrays.numbers09),
+        NumericRangeAlphabet(id: "custom_numbers")
     ]
     
     static func getById(_ id: String) -> any Alphabet {
@@ -25,13 +33,32 @@ class Alphabets {
     }
 }
 
-struct FixedSetAlphabet: Alphabet {
+class FixedSetAlphabet: Alphabet {
 
     let id: String
     let values: [String]
+    var settingsRequired: [AlphabetSettings.Field] = []
 
     init(id: String, values: [String]) {
         self.id = id
         self.values = values
+    }
+    
+    func getValuesFor(settings: AlphabetSettings) -> [String] {
+        return values
+    }
+}
+
+class NumericRangeAlphabet: Alphabet {
+    
+    let id: String
+    var settingsRequired: [AlphabetSettings.Field] = [.numericFrom, .numericTo]
+    
+    init(id: String) {
+        self.id = id
+    }
+    
+    func getValuesFor(settings: AlphabetSettings) -> [String] {
+        return (settings.numericFrom...settings.numericTo).map({ String($0) })
     }
 }

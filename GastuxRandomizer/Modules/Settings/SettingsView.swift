@@ -1,123 +1,78 @@
 //
-//  SettingsView.swift
+//  SettingsView2.swift
 //  GastuxRandomizer
 //
-//  Created by Gastón on 29/06/2022.
+//  Created by Gastón on 05/07/2022.
 //
 
 import SwiftUI
 
 struct SettingsView: View {
     
-    let options: [String] = Alphabets.options.map({ $0.id })
-    
-    @EnvironmentObject var settings: Settings
+    @ObservedObject var viewModel: SettingsViewModel
     
     var body: some View {
-      
         ZStack {
             BackgroundView()
             VStack {
                 SheetDragControlView()
-                
                 ScrollView {
                     VStack {
+                        
+                        // Alphabet selector
                         HStack {
                             Text("Values")
                             Spacer()
-                            
-                          
-                            Picker("Values", selection: $settings.randomizerSettings.alphabetId) {
-                                ForEach(options, id: \.self) { option in
+                            Picker("Values", selection: $viewModel.formFields.alphabetId) {
+                                ForEach(viewModel.options, id: \.self) { option in
                                     Text(option)
+                                        .tag(option)
                                 }
                             }
                             .pickerStyle(.menu)
+                            .frame(height: 38)
                             .background(
                                 Rectangle()
                                     .fill(Color.cardBackground)
                                     .cornerRadius(8)
                             )
                             .accentColor(Color.primaryText)
-                            
-                            
-                            
+                        }
+                        
+                        // Allow repetitions
+                        Toggle("Allow repeated chars", isOn: $viewModel.formFields.allowRepetitions)
+                        
+                        // From
+                        if(viewModel.hasSetting(.numericFrom)) {
+                            SettingsTextFieldRow(
+                                value: $viewModel.formFields.numericFrom,
+                                label: "Desde",
+                                placeholder: "",
+                                valid: viewModel.isFieldValid(.numericFrom)
+                            )
                         }
                         
                         
-                        
-//                        if settings.rando.alphabetId == "numbers" {
-//                            HStack {
-//                                Text("From")
-//                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-//
-//                                TextField("Desde", text: $settings.rangeFrom)
-//                                    .frame(minWidth: 0, maxWidth: .infinity)
-//                                    .multilineTextAlignment(.trailing)
-//                                    .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 12))
-//                                    .background(
-//                                        Rectangle()
-//                                            .fill(Color.cardBackground)
-//                                            .cornerRadius(8)
-//                                    )
-//                            }
-//
-//                            HStack {
-//                                Text("To")
-//                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-//
-//                                TextField("Desde", text: $settings.rangeTo)
-//                                    .frame(minWidth: 0, maxWidth: .infinity)
-//                                    .multilineTextAlignment(.trailing)
-//                                    .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 12))
-//                                    .background(
-//                                        Rectangle()
-//                                            .fill(Color.cardBackground)
-//                                            .cornerRadius(8)
-//                                    )
-//                            }
-//                        }
-                        
-                        Toggle("Allow repeated chars", isOn: $settings.randomizerSettings.allowRepetitions)
-                           
+                        // To
+                        if(viewModel.hasSetting(.numericTo)) {
+                            SettingsTextFieldRow(
+                                value: $viewModel.formFields.numericTo,
+                                label: "Hasta",
+                                placeholder: "",
+                                valid: viewModel.isFieldValid(.numericTo)
+                            )
+                        }
                     }
-                    .padding(24)
                 }
             }
+        }.onDisappear {
+            viewModel.saveChanges()
         }
-        
-            
-            
-        
-            
-//            Form {
-//                Section {
-//
-//                } header: {
-//                    Text("Alphabet")
-//                }
-//
-//                Section {
-//                    Toggle("Allow repeated chars", isOn: .constant(true))
-//                } header: {
-//                    Text("General Options")
-//                }
-//            }
-        
-//                .onAppear { // ADD THESE
-//                  UITableView.appearance().backgroundColor = .clear
-//                }
-//                .onDisappear {
-//                  UITableView.appearance().backgroundColor = .systemGroupedBackground
-//                }
-            
-        
-        
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
+struct SettingsView2_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(viewModel: SettingsViewModel(randomizer: Randomizer()))
     }
 }

@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct GastuxRandomizerApp: App {
+    
+    let randomizer = Randomizer()
+    
     var body: some Scene {
         WindowGroup {
             MainView()
