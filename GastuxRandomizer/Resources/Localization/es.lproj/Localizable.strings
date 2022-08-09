@@ -1,4 +1,8 @@
-"new_letter_button"                        = "Siguiente letra";
+""                                         = "";
+"// Main View"                             = "";
+"main_view.settings_button"                = "Configuración";
+"main_view.generate_value_button"          = "Siguiente letra";
+"a"                                        = "s";
 "previous_values_title"                    = "Valores anteriores:";
 "previous_values_see_history_button"       = "Ver todos…";
 "reset_values_button"                      = "Borrar";

@@ -61,8 +61,7 @@ struct MainView: View {
                     .frame(height: 16)
                 
                 // Next values button
-                Button(
-                    LocalizedStringKey("new_letter_button"))
+                Button(L10n.MainView.generateValueButton)
                 {
                     withAnimation {
                         randomizer.generateNewValue()

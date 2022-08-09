@@ -1,10 +1,13 @@
-Key,English,Spanish
-// -----
-new_letter_button,Next letter,Siguiente letra
-previous_values_title,Previous values:,Valores anteriores:
-previous_values_see_history_button,See all…,Ver todos…
-reset_values_button,Clear,Borrar
-reset_values_confirmation_title,Are you sure?,¿Estás seguro?
-reset_values_confirmation_confirm_action,Yes,Sí
-reset_values_confirmation_cancel_action,No,No
-
+"Key","English","Spanish"
+"","",""
+"// Main View","",""
+"main_view.settings_button","Settings","Configuración"
+"main_view.generate_value_button","Next letter","Siguiente letra"
+"a","c","s"
+"previous_values_title","Previous values:","Valores anteriores:"
+"previous_values_see_history_button","See all…","Ver todos…"
+"reset_values_button","Clear","Borrar"
+"reset_values_confirmation_title","Are you sure?","¿Estás seguro?"
+"reset_values_confirmation_confirm_action","Yes","Sí"
+"reset_values_confirmation_cancel_action","No","No"
+"","",""
