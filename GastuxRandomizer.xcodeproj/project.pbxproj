@@ -17,6 +17,8 @@
 		3D172EE328A2725000EEF85B /* DiceAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D172EE228A2725000EEF85B /* DiceAlphabet.swift */; };
 		3D172EE528A2726C00EEF85B /* RandomizerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D172EE428A2726C00EEF85B /* RandomizerSettings.swift */; };
 		3D172EE728A2727700EEF85B /* AlphabetSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D172EE628A2727700EEF85B /* AlphabetSettings.swift */; };
+		3D172EEC28A2C06800EEF85B /* Localizable.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D172EEB28A2C06800EEF85B /* Localizable.csv */; };
+		3D172EEE28A2CF5700EEF85B /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D172EED28A2CF5700EEF85B /* Localizable.swift */; };
 		3D1E5D11286CF01E00AA8049 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1E5D10286CF01E00AA8049 /* BackgroundView.swift */; };
 		3D1E5D13286CF05300AA8049 /* SheetDragControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1E5D12286CF05300AA8049 /* SheetDragControlView.swift */; };
 		3D2A4637286B7EA300E14C37 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2A4636286B7EA300E14C37 /* Colors.xcassets */; };
@@ -33,6 +35,7 @@
 		3D8C5346287B9C4300DEDE02 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8C5345287B9C4300DEDE02 /* SettingsViewModel.swift */; };
 		3DF5C4A72870A4D900DFD1F1 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF5C4A62870A4D900DFD1F1 /* Alphabet.swift */; };
 		3DF5C4A92870A6BC00DFD1F1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF5C4A82870A6BC00DFD1F1 /* Settings.swift */; };
+		C0AECCDAAB845539D71BF2EB /* Pods_GastuxRandomizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DD262424D29EC6337A5059 /* Pods_GastuxRandomizer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,8 @@
 		3D172EE228A2725000EEF85B /* DiceAlphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceAlphabet.swift; sourceTree = "<group>"; };
 		3D172EE428A2726C00EEF85B /* RandomizerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerSettings.swift; sourceTree = "<group>"; };
 		3D172EE628A2727700EEF85B /* AlphabetSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetSettings.swift; sourceTree = "<group>"; };
+		3D172EEB28A2C06800EEF85B /* Localizable.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Localizable.csv; sourceTree = "<group>"; };
+		3D172EED28A2CF5700EEF85B /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		3D1E5D10286CF01E00AA8049 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		3D1E5D12286CF05300AA8049 /* SheetDragControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetDragControlView.swift; sourceTree = "<group>"; };
 		3D2A4636286B7EA300E14C37 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -64,6 +69,9 @@
 		3D8C5345287B9C4300DEDE02 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		3DF5C4A62870A4D900DFD1F1 /* Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
 		3DF5C4A82870A6BC00DFD1F1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		7E3BDF9690B7414EE9D0A987 /* Pods-GastuxRandomizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GastuxRandomizer.release.xcconfig"; path = "Target Support Files/Pods-GastuxRandomizer/Pods-GastuxRandomizer.release.xcconfig"; sourceTree = "<group>"; };
+		85DD262424D29EC6337A5059 /* Pods_GastuxRandomizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GastuxRandomizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D05E4C6B174107D6C0483B44 /* Pods-GastuxRandomizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GastuxRandomizer.debug.xcconfig"; path = "Target Support Files/Pods-GastuxRandomizer/Pods-GastuxRandomizer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0AECCDAAB845539D71BF2EB /* Pods_GastuxRandomizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,12 +119,22 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		3D172EEA28A2C06800EEF85B /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				3D7C173B285E13F4000FF11D /* Localizable.strings */,
+				3D172EEB28A2C06800EEF85B /* Localizable.csv */,
+				3D172EED28A2CF5700EEF85B /* Localizable.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		3D1E5D06286CECB900AA8049 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3D172EEA28A2C06800EEF85B /* Localization */,
 				3D1E5D07286CECD100AA8049 /* Colors */,
 				3D7C172B285D1C1E000FF11D /* Assets.xcassets */,
-				3D7C173B285E13F4000FF11D /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -190,6 +209,8 @@
 			children = (
 				3D7C1726285D1C1D000FF11D /* GastuxRandomizer */,
 				3D7C1725285D1C1D000FF11D /* Products */,
+				91E92B87D2B3B10D54337C5E /* Pods */,
+				FFD0F8BA240E60AF52F38DA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,6 +243,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		91E92B87D2B3B10D54337C5E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D05E4C6B174107D6C0483B44 /* Pods-GastuxRandomizer.debug.xcconfig */,
+				7E3BDF9690B7414EE9D0A987 /* Pods-GastuxRandomizer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FFD0F8BA240E60AF52F38DA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85DD262424D29EC6337A5059 /* Pods_GastuxRandomizer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,6 +267,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D7C1732285D1C1E000FF11D /* Build configuration list for PBXNativeTarget "GastuxRandomizer" */;
 			buildPhases = (
+				3A7A889E770B1DA254891BB5 /* [CP] Check Pods Manifest.lock */,
 				3D7C1720285D1C1D000FF11D /* Sources */,
 				3D7C1721285D1C1D000FF11D /* Frameworks */,
 				3D7C1722285D1C1D000FF11D /* Resources */,
@@ -283,12 +322,38 @@
 			files = (
 				3D7C172F285D1C1E000FF11D /* Preview Assets.xcassets in Resources */,
 				3D2A4637286B7EA300E14C37 /* Colors.xcassets in Resources */,
+				3D172EEC28A2C06800EEF85B /* Localizable.csv in Resources */,
 				3D7C1739285E13F4000FF11D /* Localizable.strings in Resources */,
 				3D7C172C285D1C1E000FF11D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A7A889E770B1DA254891BB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GastuxRandomizer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3D7C1720285D1C1D000FF11D /* Sources */ = {
@@ -297,6 +362,7 @@
 			files = (
 				3D172EE528A2726C00EEF85B /* RandomizerSettings.swift in Sources */,
 				3D1E5D13286CF05300AA8049 /* SheetDragControlView.swift in Sources */,
+				3D172EEE28A2CF5700EEF85B /* Localizable.swift in Sources */,
 				3D7C173E285E156E000FF11D /* Randomizer.swift in Sources */,
 				3D46F3DA287F263D008097B3 /* SettingsPickerRow.swift in Sources */,
 				3D8781E22874DB5600B622F3 /* SettingsView.swift in Sources */,
@@ -451,6 +517,7 @@
 		};
 		3D7C1733285D1C1E000FF11D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D05E4C6B174107D6C0483B44 /* Pods-GastuxRandomizer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -484,6 +551,7 @@
 		};
 		3D7C1734285D1C1E000FF11D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E3BDF9690B7414EE9D0A987 /* Pods-GastuxRandomizer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

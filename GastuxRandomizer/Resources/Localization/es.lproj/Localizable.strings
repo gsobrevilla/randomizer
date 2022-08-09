@@ -1,0 +1,7 @@
+"new_letter_button"                        = "Siguiente letra";
+"previous_values_title"                    = "Valores anteriores:";
+"previous_values_see_history_button"       = "Ver todos…";
+"reset_values_button"                      = "Borrar";
+"reset_values_confirmation_title"          = "¿Estás seguro?";
+"reset_values_confirmation_confirm_action" = "Sí";
+"reset_values_confirmation_cancel_action"  = "No";
