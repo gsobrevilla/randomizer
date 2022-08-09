@@ -22,11 +22,4 @@ extension Color {
     static let secondaryActionDestructiveForeground = Color("secondaryActionDestructiveForeground")
     
     static let invalid = Color("invalid")
-    
-    
-    
-    
-    
-    
-    
 }

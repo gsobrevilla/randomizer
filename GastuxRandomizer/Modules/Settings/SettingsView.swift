@@ -51,6 +51,17 @@ struct SettingsView: View {
                                 valid: viewModel.isFieldValid(.numericTo)
                             )
                         }
+                        
+                        // Dice count
+                        if(viewModel.hasSetting(.diceCount)) {
+                            SettingsTextFieldRow(
+                                value: $viewModel.formFields.diceCount,
+                                label: "Número de dados",
+                                placeholder: "",
+                                valid: viewModel.isFieldValid(.diceCount)
+                            )
+                        }
+                        
                     }
                     .padding(24)
                 }
